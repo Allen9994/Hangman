@@ -25,8 +25,8 @@ int main()
     srand((unsigned) time(0));
     f = rand()%89;
     
-    int i,a,b=0,g=0,j,flag,e,k,z,u,bla=0;char choice;
-    bool fl = false;
+    int i,a,b=0,g=0,j,e,k,z,u,bla=0;char choice;
+    bool fl = false,flag = false;
     char d[50]={0};
     
     char n;
@@ -41,20 +41,12 @@ int main()
     cout << str[f] << "\n";
     string s = str[f];
 
-	char ary[s.size()];
-	s.copy(ary, s.size() + 1);
-	ary[s.size()] = '\0';
-
-	std::cout << ary ;
-    ary[strlen(ary)-1] = '\0';    
-    
-
-    a=strlen(ary);
+    a=s.size()-1;
     for(i=0;i<a;i++)
     {
-        if(ary[i]==(int)32)
+        if(s[i]==(int)32)
         {
-            d[i]=9;ary[i]=9;
+            d[i]=' ';
             b++;
         }
     }
@@ -63,51 +55,41 @@ int main()
     srand (time (NULL));
     int numbers[6];
     getSix (numbers,k);
-        
-    for(i=0;i<a;i++)
-    {
-        if(ary[i]==9)
-        {
-            cout<<" ";
-        }else
-        cout<<"- ";
-        
-    }
     do{
-        flag=0;
+        flag=false;
         if(bla>=3)
         {
-            cout << "Length of String = " << strlen(ary)<<endl;
+            cout <<"Length of the word = " << s.size()<<endl;
             cout<<"Enter letter:  ";
             cin>>n;
             for(i=0;i<a;i++)
             {
-                if(ary[i]==n)
+                if(s[i]==n)
                 {
-                    d[i]=ary[i];flag=1;
+                    d[i]=s[i];flag=true;
                 }
             } 
         }
         else
         {
             i=numbers[bla];
-            d[i]=ary[i];flag=1;
+            d[i]=s[i];flag=true;
         }
         for(i=0;i<a;i++)
         {
-            if(flag==0)
+            if(flag==false)
             {
                 g++;
             }
         }
         e=g/a;
-        if(strcmp(ary,d)==0)
+        if(strlen(d) == s.size()-1)
         {
             break;
         }
         for(i=0;i<a;i++)
         {
-            if(d[i]==9)
+            if(d[i]==' ')
             {
                 cout<<" ";
             }
@@ -131,16 +113,17 @@ int main()
             default:fl = true;
         }
         bla++;
+        
     }while(fl == false);
     if(fl == false)
     {
-        cout<<"YOU WIN!";
-        cout<<ary;
+        cout<<"YOU WIN!\n";
+        cout<<s;
     }
     else
     {
         cout<<"YOU LOOSE!";
-        cout<<"\nCORRECT ANSWER IS: ";cout<<ary;
+        cout<<"\nCORRECT ANSWER IS: ";cout<<s;
     }
     return 0;
 }  
