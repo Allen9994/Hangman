@@ -26,7 +26,8 @@ int main()
     srand((unsigned) time(0));
     f = rand()%89;
     
-    int i,a,b=0,c=0,g=0,j,flag,e,k,z,u,bla=0;char choice;
+    int i,a,b=0,g=0,j,flag,e,k,z,u,bla=0;char choice;
+    bool fl = false;
     char d[20]={0};
     
     char n;
@@ -101,8 +102,8 @@ int main()
         }
     }e=g/a;
     if(strcmp(ary,d)==0)
-    {goto ty;
-        
+    {
+        break;
     }
     for(i=0;i<a;i++)
     {
@@ -126,15 +127,20 @@ int main()
     case 2:cout<<"|	 |\n";
     case 1:cout<<"|	/ \\\n";
     case 0:cout<<" ";break;
-    default:goto re;
+    default:fl = true;
     }
     
-    c++;bla++;
-    }while(c!=20);
-    ty: cout<<"YOU WIN!";
-    puts(ary);
+    bla++;
+    }while(fl == false);
+    if(fl == false)
+    {
+        cout<<"YOU WIN!";
+        cout<<ary;
+    }
+    else
+    {
+    cout<<"YOU LOOSE!";
+    cout<<"\nCORRECT ANSWER IS: ";cout<<ary;
+    }
     return 0;
-    re: cout<<"YOU LOOSE!";
-        cout<<"\nCORRECT ANSWER IS: ";puts(ary);
-    return 0;  
 }  
