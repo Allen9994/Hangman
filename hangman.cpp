@@ -103,12 +103,13 @@ int main()
         cout<<endl<<e<<endl;
         switch(e)
         {
-            case 6:cout<<" _________\n";
-            case 5:cout<<"|        |\n";
-            case 4:cout<<"|	(.)\n";
-            case 3:cout<<"|	/|\\\n";
-            case 2:cout<<"|	 |\n";
-            case 1:cout<<"|	/ \\\n";
+            case 7:cout<<" _________\n";
+            case 6:cout<<"|        |\n";
+            case 5:cout<<"|	 ☹\n";
+            case 4:cout<<"|	/||\\\n";
+            case 3:cout<<"|	 ||\n";
+            case 2:cout<<"|	/  \\\n";
+            case 1:cout<<"|__________\n";
             case 0:cout<<" ";break;
             default:fl = true;
         }
